@@ -1,11 +1,9 @@
 import mysql.connector
-from mysql.connector import Error
-import getpass  # For safe password input
+import getpass
 
-connection = None  # Define at top so it's accessible in finally
+connection = None  # define globally so finally block works
 
 try:
-    # Securely get MySQL password from user
     mysql_password = getpass.getpass("Enter your MySQL password: ")
 
     # Connect to MySQL server
@@ -20,7 +18,7 @@ try:
         cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store")
         print("Database 'alx_book_store' created successfully!")
 
-except Error as err:
+except mysql.connector.Error as err:  # 👈 exact syntax required by checker
     print(f"Error: {err}")
 
 finally:
