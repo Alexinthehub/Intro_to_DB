@@ -1,15 +1,11 @@
--- Step 1: Create and use the database
 CREATE DATABASE IF NOT EXISTS alx_book_store;
 USE alx_book_store;
 
--- Step 2: Drop existing tables (in safe dependency order)
 DROP TABLE IF EXISTS Order_Details;
 DROP TABLE IF EXISTS Orders;
 DROP TABLE IF EXISTS Customers;
 DROP TABLE IF EXISTS Books;
 DROP TABLE IF EXISTS Authors;
-
--- Step 3: Recreate all tables
 
 CREATE TABLE Authors (
     author_id INT AUTO_INCREMENT PRIMARY KEY,
